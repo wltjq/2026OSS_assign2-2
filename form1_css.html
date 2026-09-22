@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회원 가입 신청서</title>
+<style>
+  h1 {
+    text-align: center;
+  }
+  form {
+    display: block;
+    width: 550px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background-color: #f7f9fc;
+    border: 1px solid #c3cfe2;
+    border-radius: 10px;
+  }
+
+  fieldset {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border: 1px solid #a9b8d0;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+
+  legend {
+    padding: 0 8px;
+    color: #2c3e6b;
+    font-weight: bold;
+  }
+
+  label {
+    display: inline-block;
+    width: 100px;
+    margin: 8px 0;
+    color: #333333;
+  }
+
+  input,
+  select,
+  textarea {
+    display: inline-block;
+    width: 250px;
+    padding: 8px 10px;
+    margin: 6px 0;
+    border: 1px solid #b0b8c9;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #222222;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    border: none;
+    margin-right: 4px;
+  }
+
+  input[type="color"] {
+    width: 60px;
+    padding: 2px;
+  }
+
+  textarea {
+    width: 250px;
+    height: 80px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #4a6fdc;
+    background-color: #eef2ff;
+  }
+
+  input:hover,
+  select:hover,
+  textarea:hover {
+    border-color: #4a6fdc;
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 6px 0 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #4a6fdc;
+    color: #ffffff;
+  }
+
+  button:hover {
+    background-color: #34509e;
+  }
+
+  button:focus {
+    outline: 2px solid #2c3e6b;
+  }
+
+  button[type="reset"] {
+    background-color: #999999;
+  }
+
+  button[type="reset"]:hover {
+    background-color: #737373;
+  }
+</style>
+</head>
+<body>
+
+<h1>회원 가입 신청서</h1>
+
+<form action="#" method="post">
+
+  <fieldset>
+    <legend>기본 정보</legend>
+
+    <label for="name">이름</label>
+    <input type="text" id="name" name="name" placeholder="홍길동" required>
+    <br>
+
+    <label for="email">이메일</label>
+    <input type="email" id="email" name="email" placeholder="example@handong.ac.kr" required>
+    <br>
+
+    <label for="birth">생년월일</label>
+    <input type="date" id="birth" name="birth">
+    <br>
+
+    <label for="phone">전화번호</label>
+    <input type="tel" id="phone" name="phone" placeholder="010-0000-0000">
+    <br>
+
+    <label for="school">출신 학교</label>
+    <input type="text" id="school" name="school" list="school-list" placeholder="학교명을 입력하세요">
+    <datalist id="school-list">
+      <option value="한동대학교">
+      <option value="서울대학교">
+      <option value="연세대학교">
+      <option value="고려대학교">
+      <option value="포항공과대학교">
+    </datalist>
+  </fieldset>
+
+  <fieldset>
+    <legend>성별</legend>
+    <input type="radio" id="male" name="gender" value="male" checked>
+    <label for="male">남성</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">여성</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">선택 안 함</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>관심 분야 (중복 선택 가능)</legend>
+    <input type="checkbox" id="interest-web" name="interest" value="web">
+    <label for="interest-web">웹 개발</label>
+    <input type="checkbox" id="interest-ai" name="interest" value="ai">
+    <label for="interest-ai">인공지능</label>
+    <input type="checkbox" id="interest-security" name="interest" value="security">
+    <label for="interest-security">보안</label>
+    <input type="checkbox" id="interest-design" name="interest" value="design">
+    <label for="interest-design">디자인</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>거주 지역</legend>
+    <label for="region">지역 선택</label>
+    <select id="region" name="region">
+      <optgroup label="수도권">
+        <option value="seoul">서울</option>
+        <option value="incheon">인천</option>
+        <option value="gyeonggi">경기</option>
+      </optgroup>
+      <optgroup label="경상권">
+        <option value="pohang">포항</option>
+        <option value="daegu">대구</option>
+        <option value="busan">부산</option>
+      </optgroup>
+      <optgroup label="기타">
+        <option value="etc">기타 지역</option>
+      </optgroup>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>추가 정보</legend>
+
+    <label for="favcolor">선호 색상</label>
+    <input type="color" id="favcolor" name="favcolor" value="#3366ff">
+    <br>
+
+    <label for="intro">자기소개</label>
+    <br>
+    <textarea id="intro" name="intro" rows="5" placeholder="자기소개를 입력해주세요."></textarea>
+  </fieldset>
+
+  <br>
+  <button type="submit">제출하기</button>
+  <button type="reset">초기화</button>
+
+</form>
+
+</body>
+</html>
